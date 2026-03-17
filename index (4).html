@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Élégance — أزياء راقية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --ivory: #f5f0e8;
+      --gold: #b8975a;
+      --gold-light: #d4b483;
+      --gold-dark: #8a6e3a;
+      --charcoal: #1c1c1c;
+      --mid: #4a4a4a;
+      --soft: #9a9080;
+      --border: #e8e0d0;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ====== ANNOUNCEMENT BAR ====== */
+    .announcement {
+      background: var(--charcoal);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .announcement span { color: var(--white); }
+
+    /* ====== NAV ====== */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 60px;
+    }
+    .nav-left {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-left a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-left a:hover { color: var(--gold); }
+    .logo-wrap {
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .logo-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      color: var(--charcoal);
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block;
+    }
+    .logo-ar {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-right a {
+      font-size: 13px;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-right a:hover { color: var(--gold); }
+    .tiktok-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--charcoal);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      border-radius: 2px;
+      font-size: 11px !important;
+      letter-spacing: 2px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      overflow: hidden;
+    }
+    .hero-left {
+      background: var(--charcoal);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8975a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 28px;
+      animation: fadeIn 1s ease both;
+    }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 76px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 28px;
+      animation: fadeIn 1s ease 0.15s both;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: #888;
+      line-height: 1.8;
+      max-width: 380px;
+      margin-bottom: 44px;
+      animation: fadeIn 1s ease 0.3s both;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      animation: fadeIn 1s ease 0.45s both;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 34px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 34px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: border-color 0.3s;
+      display: inline-block;
+    }
+    .btn-outline-white:hover { border-color: var(--gold); color: var(--gold-light); }
+    .hero-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--gold);
+      margin: 40px 0;
+      animation: fadeIn 1s ease 0.6s both;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      animation: fadeIn 1s ease 0.7s both;
+    }
+    .stat strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--white); font-weight: 400; }
+    .stat span { font-size: 11px; color: #666; letter-spacing: 2px; }
+
+    .hero-right {
+      background: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(184,151,90,0.06) 0%, transparent 60%);
+    }
+    .phone-frame {
+      width: 260px;
+      height: 480px;
+      background: var(--charcoal);
+      border-radius: 40px;
+      border: 6px solid #2e2e2e;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 20px;
+      background: #111;
+      border-radius: 20px;
+      z-index: 10;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #1a1410 0%, #0d0a08 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
+    .phone-video-content {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 90px;
+      opacity: 0.7;
+    }
+    .phone-overlay-bottom {
+      position: relative;
+      z-index: 5;
+      padding: 16px 14px 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    }
+    .phone-username {
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .phone-caption {
+      font-size: 10px;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .phone-price-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold);
+      padding: 5px 12px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+    .phone-side-actions {
+      position: absolute;
+      right: 10px;
+      bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 5;
+    }
+    .side-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .side-btn .icon {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 15px;
+    }
+    .side-btn span { font-size: 9px; color: #ccc; }
+    .gold-tag-float {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-right: 3px solid var(--gold);
+      padding: 10px 14px;
+      border-radius: 4px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .gold-tag-float.top { top: 60px; right: -20px; }
+    .gold-tag-float.bottom { bottom: 60px; left: -30px; }
+    .tag-label { font-size: 10px; color: var(--soft); letter-spacing: 1px; margin-bottom: 2px; }
+    .tag-value { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+    .hero-ornament {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+    .hero-ornament::before {
+      content: '';
+      position: absolute;
+      inset: 15px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== MARQUEE ====== */
+    .marquee-wrap {
+      background: var(--gold);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    .marquee-track span {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--white);
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .marquee-track span::before { content: '✦'; font-size: 8px; opacity: 0.7; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ====== SECTION BASE ====== */
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-sub { font-size: 14px; color: var(--soft); line-height: 1.7; max-width: 480px; font-weight: 300; }
+
+    /* ====== CATEGORIES ====== */
+    .categories {
+      padding: 90px 60px;
+      background: var(--white);
+    }
+    .cat-header { margin-bottom: 50px; }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .cat-card {
+      aspect-ratio: 3/4;
+      background: var(--ivory);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 28px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+    .cat-card:hover { transform: scale(0.98); }
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%);
+      transition: opacity 0.3s;
+    }
+    .cat-card:hover::before { opacity: 0.8; }
+    .cat-bg-emoji {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 90px;
+      opacity: 0.3;
+    }
+    .cat-bottom { position: relative; z-index: 2; text-align: center; }
+    .cat-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .cat-count { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 2px; }
+    .cat-card:nth-child(1) { background: linear-gradient(135deg, #2a1f2e, #1a0f1e); }
+    .cat-card:nth-child(2) { background: linear-gradient(135deg, #1e2a28, #0f1a18); }
+    .cat-card:nth-child(3) { background: linear-gradient(135deg, #2a2214, #1a140a); }
+    .cat-card:nth-child(4) { background: linear-gradient(135deg, #1e1e2a, #0f0f1a); }
+
+    /* ====== FEATURED PRODUCTS ====== */
+    .products {
+      padding: 90px 60px;
+      background: var(--cream);
+    }
+    .products-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 50px;
+    }
+    .view-all-link {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .view-all-link:hover { color: var(--gold-dark); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+    .product-card:hover { box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+    .product-img {
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .bg-1 { background: linear-gradient(135deg, #2a1f2e, #3d2a44); }
+    .bg-2 { background: linear-gradient(135deg, #1e2a20, #2a3d2e); }
+    .bg-3 { background: linear-gradient(135deg, #2a2218, #3d3220); }
+    .bg-4 { background: linear-gradient(135deg, #1a1e2a, #252a3d); }
+    .bg-5 { background: linear-gradient(135deg, #2a1a1a, #3d2222); }
+    .bg-6 { background: linear-gradient(135deg, #221a2a, #33253d); }
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--charcoal);
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      padding: 5px 10px;
+      text-transform: uppercase;
+    }
+    .product-badge.sale { background: var(--gold); color: var(--white); }
+    .product-wishlist {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.9);
+      display: grid; place-items: center;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .product-wishlist:hover { background: white; }
+    .product-info { padding: 20px 18px; }
+    .product-cat { font-size: 10px; letter-spacing: 3px; color: var(--soft); text-transform: uppercase; margin-bottom: 6px; }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--charcoal);
+    }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; }
+    .product-price { font-size: 16px; font-weight: 700; color: var(--charcoal); }
+    .product-price .old { font-size: 12px; color: #bbb; text-decoration: line-through; margin-right: 6px; font-weight: 400; }
+    .add-btn {
+      font-family: 'Cairo', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid var(--charcoal);
+      color: var(--charcoal);
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .add-btn:hover { background: var(--charcoal); color: var(--white); }
+
+    /* ====== TIKTOK CTA ====== */
+    .tiktok-cta {
+      padding: 100px 60px;
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tiktok-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b8975a' fill-opacity='0.03'%3E%3Cpath d='M0 0h80v80H0V0zm20 20v40h40V20H20zm20 8a12 12 0 1 1 0 24 12 12 0 0 1 0-24z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .tiktok-left .section-title { color: var(--white); }
+    .tiktok-left .section-sub { color: #666; max-width: 400px; }
+    .tiktok-left .section-line { background: var(--gold); }
+    .tiktok-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 36px 0;
+    }
+    .tstat {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tstat strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+    .tstat span { font-size: 10px; letter-spacing: 2px; color: #555; text-transform: uppercase; }
+    .tiktok-follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 36px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .tiktok-follow-btn:hover { background: var(--gold-dark); }
+    .tiktok-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .mini-phone {
+      width: 160px;
+      height: 280px;
+      background: #111;
+      border-radius: 22px;
+      border: 3px solid #2a2a2a;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      position: relative;
+    }
+    .mini-phone:nth-child(2) { margin-top: -30px; width: 175px; height: 300px; border-color: var(--gold); }
+    .mini-phone::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 10px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+
+    /* ====== HOW TO ORDER ====== */
+    .how-to {
+      padding: 90px 60px;
+      background: var(--ivory);
+      text-align: center;
+    }
+    .how-to .section-line { margin: 0 auto 14px; }
+    .how-to .section-sub { margin: 0 auto; }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      position: relative;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 12%;
+      left: 12%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-circle {
+      width: 60px; height: 60px;
+      background: var(--white);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .step-icon { font-size: 26px; margin-bottom: 12px; }
+    .step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--soft); line-height: 1.6; }
+
+    /* ====== TESTIMONIALS ====== */
+    .testimonials {
+      padding: 90px 60px;
+      background: var(--white);
+    }
+    .testimonials-head { margin-bottom: 50px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      padding: 32px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--border);
+      line-height: 0.5;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .t-text {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .t-author { display: flex; align-items: center; gap: 12px; }
+    .t-avatar {
+      width: 44px; height: 44px;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 20px;
+    }
+    .t-name { font-size: 13px; font-weight: 700; color: var(--charcoal); }
+    .t-loc { font-size: 11px; color: var(--soft); letter-spacing: 1px; }
+    .t-stars { color: var(--gold); font-size: 13px; margin-bottom: 3px; }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: var(--charcoal);
+      padding: 70px 60px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 30px;
+    }
+    .footer-logo-el {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .footer-logo-ar { font-size: 11px; color: var(--gold); letter-spacing: 3px; margin-bottom: 16px; }
+    .footer-desc { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .soc-btn {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: grid; place-items: center;
+      font-size: 15px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .soc-btn:hover { border-color: var(--gold); background: rgba(184,151,90,0.1); }
+    .footer-col-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: #555; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 1px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ====== WHATSAPP FLOAT ====== */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      background: #25D366;
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 300;
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 30px; }
+      .hero-right { min-height: 400px; padding: 40px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .tiktok-cta { grid-template-columns: 1fr; padding: 60px 30px; }
+      .steps-row { grid-template-columns: repeat(2, 1fr); }
+      .steps-row::before { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 60px 30px; }
+      .nav-top { padding: 18px 24px; }
+      .nav-left { display: none; }
+      .logo-wrap { position: static; transform: none; }
+    }
+    @media (max-width: 600px) {
+      .products-grid, .categories-grid { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+      .tiktok-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="announcement">
+  توصيل مجاني للطلبات فوق <span>٥٠٠ ج</span> — دفع عند الاستلام في جميع محافظات مصر
+</div>
+
+<nav>
+  <div class="nav-top">
+    <ul class="nav-left">
+      <li><a href="#">مجموعاتنا</a></li>
+      <li><a href="#">العروض</a></li>
+      <li><a href="#">الجديد</a></li>
+    </ul>
+    <div class="logo-wrap">
+      <a class="logo-en" href="#">ÉLÉGANCE</a>
+      <div class="logo-ar">أزياء راقية</div>
+    </div>
+    <div class="nav-right">
+      <a href="#">تتبع طلبك</a>
+      <a href="https://www.tiktok.com" target="_blank" class="tiktok-nav-btn">🎵 تيك توك</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">✦ أزياء مصر ✦ موسم ٢٠٢٥</div>
+    <h1 class="hero-h1">
+      الأناقة<br/>
+      <em>في كل تفصيلة</em>
+    </h1>
+    <p class="hero-desc">
+      أحدث صيحات الموضة العالمية بأسعار تناسبك — من الكاجوال اليومي إلى الأنيق الرسمي، كل ما تحتاجيه في مكان واحد.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-gold">تسوقي الآن</a>
+      <a href="https://www.tiktok.com" target="_blank" class="btn-outline-white">🎵 تيك توك</a>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>+١٠٠K</strong>
+        <span>متابع</span>
+      </div>
+      <div class="stat">
+        <strong>٤.٩★</strong>
+        <span>تقييم</span>
+      </div>
+      <div class="stat">
+        <strong>٤٨س</strong>
+        <span>توصيل</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-video-content">👗</div>
+        <div class="phone-overlay-bottom">
+          <div class="phone-username">@ÉLÉGANCE.EGYPT</div>
+          <div class="phone-caption">فستان ساتان الجديد 🖤 متاح الآن بس</div>
+          <div class="phone-price-tag">٣٩٩ ج — اطلبي دلوقتي</div>
+        </div>
+        <div class="phone-side-actions">
+          <div class="side-btn"><div class="icon">♥</div><span>٢٤K</span></div>
+          <div class="side-btn"><div class="icon">💬</div><span>٣٤٢</span></div>
+          <div class="side-btn"><div class="icon">↗</div><span>شير</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="gold-tag-float top">
+      <div class="tag-label">أحدث وصول</div>
+      <div class="tag-value">🌟 كولكشن جديد</div>
+    </div>
+    <div class="gold-tag-float bottom">
+      <div class="tag-label">طريقة الدفع</div>
+      <div class="tag-value">💳 كاش أو كارت</div>
+    </div>
+    <div class="hero-ornament"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>توصيل لكل مصر</span>
+    <span>دفع عند الاستلام</span>
+    <span>أحدث الموضة</span>
+    <span>جودة مضمونة</span>
+    <span>إرجاع خلال ٧ أيام</span>
+    <span>أسعار لا تقاوم</span>
+    <span>توصيل لكل مصر</span>
+    <span>دفع عند الاستلام</span>
+    <span>أحدث الموضة</span>
+    <span>جودة مضمونة</span>
+    <span>إرجاع خلال ٧ أيام</span>
+    <span>أسعار لا تقاوم</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="cat-header">
+    <div class="section-eyebrow">تصفحي حسب الفئة</div>
+    <div class="section-title">كل ما تحتاجيه<br/><em>في مكان واحد</em></div>
+    <div class="section-line"></div>
+  </div>
+  <div class="categories-grid">
+    <a class="cat-card" href="#">
+      <div class="cat-bg-emoji">👗</div>
+      <div class="cat-bottom">
+        <div class="cat-name">فساتين</div>
+        <div class="cat-count">+١٢٠ قطعة</div>
+      </div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-bg-emoji">👔</div>
+      <div class="cat-bottom">
+        <div class="cat-name">كاجوال</div>
+        <div class="cat-count">+٨٠ قطعة</div>
+      </div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-bg-emoji">🧥</div>
+      <div class="cat-bottom">
+        <div class="cat-name">أوتر وير</div>
+        <div class="cat-count">+٥٠ قطعة</div>
+      </div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-bg-emoji">👜</div>
+      <div class="cat-bottom">
+        <div class="cat-name">إكسسوارات</div>
+        <div class="cat-count">+٢٠٠ قطعة</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-head">
+    <div>
+      <div class="section-eyebrow">أحدث المنتجات</div>
+      <div class="section-title">المميزة <em>هذا الموسم</em></div>
+      <div class="section-line"></div>
+    </div>
+    <a href="#" class="view-all-link">عرض المجموعة كاملة ←</a>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-img bg-1">
+        <div class="product-badge">جديد</div>
+        <div class="product-wishlist">♡</div>
+        👗
+      </div>
+      <div class="product-info">
+        <div class="product-cat">فساتين</div>
+        <div class="product-name">فستان ساتان كلاسيك</div>
+        <div class="product-footer">
+          <div class="product-price"><span class="old">٥٥٠ ج</span>٣٩٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img bg-2">
+        <div class="product-badge sale">خصم ٣٠٪</div>
+        <div class="product-wishlist">♡</div>
+        👚
+      </div>
+      <div class="product-info">
+        <div class="product-cat">كاجوال</div>
+        <div class="product-name">هودي أوفر سايز مودرن</div>
+        <div class="product-footer">
+          <div class="product-price"><span class="old">٣٥٠ ج</span>٢٤٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img bg-3">
+        <div class="product-badge">جديد</div>
+        <div class="product-wishlist">♡</div>
+        👖
+      </div>
+      <div class="product-info">
+        <div class="product-cat">بناطيل</div>
+        <div class="product-name">بنطلون واسع أنيق</div>
+        <div class="product-footer">
+          <div class="product-price"><span class="old">٣٨٠ ج</span>٢٩٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img bg-4">
+        <div class="product-badge">تريند</div>
+        <div class="product-wishlist">♡</div>
+        🧥
+      </div>
+      <div class="product-info">
+        <div class="product-cat">جاكيتات</div>
+        <div class="product-name">جاكيت جلد عصري</div>
+        <div class="product-footer">
+          <div class="product-price">٦٩٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img bg-5">
+        <div class="product-badge sale">خصم ٢٥٪</div>
+        <div class="product-wishlist">♡</div>
+        👜
+      </div>
+      <div class="product-info">
+        <div class="product-cat">حقائب</div>
+        <div class="product-name">حقيبة يد كروس بودي</div>
+        <div class="product-footer">
+          <div class="product-price"><span class="old">٤٤٠ ج</span>٣٢٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img bg-6">
+        <div class="product-badge">جديد</div>
+        <div class="product-wishlist">♡</div>
+        👠
+      </div>
+      <div class="product-info">
+        <div class="product-cat">أحذية</div>
+        <div class="product-name">حذاء شامواه بيج</div>
+        <div class="product-footer">
+          <div class="product-price">٤٩٩ ج</div>
+          <button class="add-btn">اطلبي</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIKTOK CTA -->
+<section class="tiktok-cta">
+  <div class="tiktok-left">
+    <div class="section-eyebrow">🎵 تيك توك</div>
+    <div class="section-title">تابعينا وشوفي<br/><em>الجديد أولاً</em></div>
+    <div class="section-line"></div>
+    <p class="section-sub">فيديوهات يومية للمنتجات، لقطات من وراء الكواليس، وعروض حصرية للمتابعين فقط.</p>
+    <div class="tiktok-stats">
+      <div class="tstat"><strong>١٠٠K+</strong><span>متابع</span></div>
+      <div class="tstat"><strong>٥M+</strong><span>مشاهدة</span></div>
+      <div class="tstat"><strong>٣٠٠K+</strong><span>لايك</span></div>
+    </div>
+    <a href="https://www.tiktok.com" target="_blank" class="tiktok-follow-btn">
+      🎵 &nbsp; تابعينا على تيك توك
+    </a>
+  </div>
+  <div class="tiktok-right">
+    <div class="mini-phone" data-label="ستايل يومي">👚</div>
+    <div class="mini-phone" data-label="أحدث الوصول">👗</div>
+    <div class="mini-phone" data-label="كولكشن">🧥</div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="how-to">
+  <div class="section-eyebrow">بسيطة جداً</div>
+  <div class="section-title">إزاي تطلبي <em>في ٤ خطوات؟</em></div>
+  <div class="section-line"></div>
+  <p class="section-sub">طلبك عندنا سهل وسريع وآمن. هنوصلك في أسرع وقت.</p>
+  <div class="steps-row">
+    <div class="step">
+      <div class="step-circle">١</div>
+      <div class="step-icon">🎵</div>
+      <div class="step-title">شوفي على تيك توك</div>
+      <div class="step-desc">تابعي صفحتنا وشوفي الجديد وأحدث العروض كل يوم</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">٢</div>
+      <div class="step-icon">💬</div>
+      <div class="step-title">ابعتي رسالة</div>
+      <div class="step-desc">اكتبي في الكومنت أو أبعتي رسالة مباشرة باسم المنتج</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">٣</div>
+      <div class="step-icon">📦</div>
+      <div class="step-title">تأكيد الطلب</div>
+      <div class="step-desc">هنتواصل معاكي لتأكيد البيانات وتجهيز الشحن</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">٤</div>
+      <div class="step-icon">🚀</div>
+      <div class="step-title">استلمي وادفعي</div>
+      <div class="step-desc">توصيل خلال ٤٨ ساعة والدفع عند استلام الطلب</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-head">
+    <div class="section-eyebrow">آراء العملاء</div>
+    <div class="section-title">بيقولوا إيه <em>عنا</em></div>
+    <div class="section-line"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">الفستان وصل في وقته تماماً والجودة فاقت توقعاتي. المقاس كان تمام زي ما الصورة بالظبط. هطلب تاني بالتأكيد.</p>
+      <div class="t-author">
+        <div class="t-avatar">👩</div>
+        <div>
+          <div class="t-name">سارة محمد</div>
+          <div class="t-loc">القاهرة • مارس ٢٠٢٥</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">أسعار مش موجودة في أي مكان تاني والخامة ممتازة جداً. التعامل محترم والتوصيل سريع. ننصح بيهم جداً.</p>
+      <div class="t-author">
+        <div class="t-avatar">👩‍🦱</div>
+        <div>
+          <div class="t-name">نور إبراهيم</div>
+          <div class="t-loc">الإسكندرية • فبراير ٢٠٢٥</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">شريت هودي وبنطلون والاتنين تحفة. الألوان زي ما بتبانوا في التيك توك بالظبط. شكراً على الاهتمام والسرعة.</p>
+      <div class="t-author">
+        <div class="t-avatar">🧕</div>
+        <div>
+          <div class="t-name">ريم عبدالله</div>
+          <div class="t-loc">الجيزة • يناير ٢٠٢٥</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-el">ÉLÉGANCE</div>
+      <div class="footer-logo-ar">أزياء راقية — مصر</div>
+      <p class="footer-desc">وجهتك الأولى للموضة الأنيقة في مصر. أحدث الصيحات بأسعار مناسبة وجودة مضمونة مع التوصيل لجميع المحافظات.</p>
+      <div class="footer-socials">
+        <a href="#" class="soc-btn">🎵</a>
+        <a href="#" class="soc-btn">📸</a>
+        <a href="#" class="soc-btn">💬</a>
+        <a href="#" class="soc-btn">📘</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تصفحي</div>
+      <ul class="footer-links">
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#">المجموعات</a></li>
+        <li><a href="#">العروض</a></li>
+        <li><a href="#">الجديد</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">فئات</div>
+      <ul class="footer-links">
+        <li><a href="#">فساتين</a></li>
+        <li><a href="#">كاجوال</a></li>
+        <li><a href="#">أوتر وير</a></li>
+        <li><a href="#">إكسسوارات</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">خدمة العملاء</div>
+      <ul class="footer-links">
+        <li><a href="#">تتبع طلبك</a></li>
+        <li><a href="#">سياسة الإرجاع</a></li>
+        <li><a href="#">الشحن والتوصيل</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© ٢٠٢٥ Élégance Egypt — جميع الحقوق محفوظة</span>
+    <span>صُنع بـ♥ في مصر</span>
+    <span style="color: var(--gold); letter-spacing: 2px; font-weight: 700;">DEV BY MUSAAB</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/201000000000" target="_blank" class="wa-float">💬</a>
+
+</body>
+</html>
